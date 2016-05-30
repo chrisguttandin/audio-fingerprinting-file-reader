@@ -2,38 +2,66 @@
 
 module.exports = function (config) {
 
-    config.set({
+    /* eslint-disable indent */
+    var configuration = {
 
-        basePath: '../../',
+            basePath: '../../',
 
-        browsers: [
+            files: [
+                'src/module.js',
+                {
+                    included: false,
+                    pattern: 'test/fixtures/**',
+                    served: true,
+                    watched: true,
+                },
+                'test/integration/**/*.js'
+            ],
+
+            frameworks: [
+                'browserify',
+                'leche',
+                'mocha',
+                'sinon-chai' // implicitly uses chai too
+            ],
+
+            preprocessors: {
+                'src/module.js': 'browserify',
+                'test/integration/**/*.js': 'browserify'
+            }
+
+        };
+    /* eslint-enable indent */
+
+    if (process.env.TRAVIS) {
+        configuration.browsers = [
+            'ChromeSauceLabs',
+            'FirefoxSauceLabs'
+        ];
+
+        configuration.captureTimeout = 120000;
+
+        configuration.customLaunchers = {
+            ChromeSauceLabs: {
+                base: 'SauceLabs',
+                browserName: 'chrome',
+                platform: 'OS X 10.11'
+            },
+            FirefoxSauceLabs: {
+                base: 'SauceLabs',
+                browserName: 'firefox',
+                platform: 'OS X 10.11'
+            }
+        };
+
+        configuration.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
+    } else {
+        configuration.browsers = [
             'ChromeCanary',
             'FirefoxDeveloper'
-        ],
+        ];
+    }
 
-        files: [
-            'src/module.js',
-            {
-                included: false,
-                pattern: 'test/fixtures/**',
-                served: true,
-                watched: true,
-            },
-            'test/integration/**/*.js'
-        ],
-
-        frameworks: [
-            'browserify',
-            'leche',
-            'mocha',
-            'sinon-chai' // implicitly uses chai too
-        ],
-
-        preprocessors: {
-            'src/module.js': 'browserify',
-            'test/integration/**/*.js': 'browserify'
-        }
-
-    });
+    config.set(configuration);
 
 };

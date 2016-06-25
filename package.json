@@ -1,5 +1,8 @@
 {
   "author": "Christoph Guttandin",
+  "bugs": {
+    "url": "https://github.com/chrisguttandin/audio-fingerprinting-file-reader/issues"
+  },
   "description": "A reader for files created by audfprint.",
   "devDependencies": {
     "babel-eslint": "^6.0.0",

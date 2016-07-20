@@ -1,7 +1,23 @@
 {
   "author": "Christoph Guttandin",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "plugins": [
+            "transform-es2015-modules-commonjs"
+          ]
+        }
+      ]
+    ]
+  },
   "bugs": {
     "url": "https://github.com/chrisguttandin/audio-fingerprinting-file-reader/issues"
+  },
+  "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.10.3",
+    "babelify": "^7.3.0"
   },
   "description": "A reader for files created by audfprint.",
   "devDependencies": {

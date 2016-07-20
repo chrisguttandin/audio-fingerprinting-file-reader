@@ -1,5 +1,5 @@
-module.exports = function loadFixture(fixture, callback) {
-    var request = new XMLHttpRequest(); // eslint-disable-line no-undef
+export const loadFixture = (fixture, callback) => {
+    const request = new XMLHttpRequest();
 
     request.onerror = function () {
         callback('request-failed');

@@ -1,13 +1,11 @@
-module.exports.readArrayBuffer = function readArrayBuffer (arrayBuffer) {
-    var dataView,
-        hashes,
-        textEncoder;
+const TEXT_ENCODER = new TextDecoder('utf-8');
 
-    dataView = new DataView(arrayBuffer, 0, 16);
-    hashes = [];
-    textEncoder = new TextDecoder('utf-8'); // eslint-disable-line no-undef
+export const readArrayBuffer = (arrayBuffer) => {
+    const hashes = [];
 
-    if (textEncoder.decode(dataView) === 'audfprinthashV00') {
+    var dataView = new DataView(arrayBuffer, 0, 16);
+
+    if (TEXT_ENCODER.decode(dataView) === 'audfprinthashV00') {
         let offset = 16;
 
         dataView = new DataView(arrayBuffer);

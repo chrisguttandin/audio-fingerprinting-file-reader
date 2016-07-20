@@ -1,18 +1,18 @@
-var audioFingerprintingFileReader = require('../../src/module.js'),
-    hashesData = require('../fixtures/hashes-data.json'),
-    loadFixture = require('../helper/load-fixture.js');
+import hashesData from '../fixtures/hashes-data';
+import { loadFixture } from '../helper/load-fixture';
+import { readArrayBuffer } from '../../src/module';
 
-describe('audio-fingerprinting-file-reader', function () {
+describe('audio-fingerprinting-file-reader', () => {
 
-    describe('readArrayBuffer()', function () {
+    describe('readArrayBuffer()', () => {
 
-        leche.withData(hashesData, function (filename, hashes) {
+        leche.withData(hashesData, (filename, hashes) => {
 
-            it('should read the hashes from the file', function (done) {
-                loadFixture(filename, function (err, arrayBuffer) {
+            it('should read the hashes from the file', (done) => {
+                loadFixture(filename, (err, arrayBuffer) => {
                     expect(err).to.be.null;
 
-                    expect(audioFingerprintingFileReader.readArrayBuffer(arrayBuffer)).to.deep.equal(hashes);
+                    expect(readArrayBuffer(arrayBuffer)).to.deep.equal(hashes);
 
                     done();
                 });

@@ -40,7 +40,7 @@
     "leche": "^2.1.1",
     "load-grunt-config": "^0.19.1",
     "lolex": "^1.4.0",
-    "mocha": "^2.3.4",
+    "mocha": "^3.0.0",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "watchify": "^3.7.0"

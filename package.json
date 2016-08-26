@@ -54,7 +54,7 @@
     "url": "https://github.com/chrisguttandin/audio-fingerprinting-file-reader.git"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt lint && grunt test"
   },
   "version": "1.0.0"
 }

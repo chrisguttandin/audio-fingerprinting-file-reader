@@ -13,7 +13,7 @@ module.exports = function (config) {
                     included: false,
                     pattern: 'test/fixtures/**',
                     served: true,
-                    watched: true,
+                    watched: true
                 },
                 'test/integration/**/*.js'
             ],

@@ -3,7 +3,7 @@ const TEXT_ENCODER = new TextDecoder('utf-8');
 export const readArrayBuffer = (arrayBuffer) => {
     const hashes = [];
 
-    var dataView = new DataView(arrayBuffer, 0, 16);
+    let dataView = new DataView(arrayBuffer, 0, 16);
 
     if (TEXT_ENCODER.decode(dataView) === 'audfprinthashV00') {
         let offset = 16;

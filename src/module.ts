@@ -1,7 +1,8 @@
-const TEXT_ENCODER = new TextDecoder('utf-8');
+// @todo Remove this declaration when it becomes available in the dom lib.
+const TEXT_ENCODER: TextEncoding.TextDecoder = new TextDecoder('utf-8');
 
-export const readArrayBuffer = (arrayBuffer) => {
-    const hashes = [];
+export const readArrayBuffer = (arrayBuffer: ArrayBuffer): [ number, number ][] => {
+    const hashes: [ number, number ][] = [];
 
     let dataView = new DataView(arrayBuffer, 0, 16);
 
@@ -19,5 +20,5 @@ export const readArrayBuffer = (arrayBuffer) => {
         return hashes;
     }
 
-    // @todo Throw an error.
+    throw new Error('The given arrayBuffer seems to contain no content of a audfprint hash file.');
 };

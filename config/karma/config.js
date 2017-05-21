@@ -5,7 +5,6 @@ module.exports = function (config) {
         basePath: '../../',
 
         files: [
-            'src/module.js',
             {
                 included: false,
                 pattern: 'test/fixtures/**',
@@ -16,15 +15,31 @@ module.exports = function (config) {
         ],
 
         frameworks: [
-            'browserify',
             'leche',
             'mocha',
             'sinon-chai'
         ],
 
         preprocessors: {
-            'src/module.js': 'browserify',
-            'test/integration/**/*.js': 'browserify'
+            'test/integration/**/*.js': 'webpack'
+        },
+
+        webpack: {
+            module: {
+                loaders: [
+                    {
+                        loader: 'ts-loader',
+                        test: /\.ts?$/
+                    }
+                ]
+            },
+            resolve: {
+                extensions: [ '.js', '.ts' ]
+            }
+        },
+
+        webpackMiddleware: {
+            noInfo: true
         }
 
     });

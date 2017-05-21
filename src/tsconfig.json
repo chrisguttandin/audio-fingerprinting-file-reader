@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "types": [
+      "text-encoding"
+    ]
+  },
+  "extends": "../node_modules/tsconfig-holy-grail/src/tsconfig-browser"
+}

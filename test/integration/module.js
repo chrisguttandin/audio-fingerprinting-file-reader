@@ -1,4 +1,4 @@
-import hashesData from '../fixtures/hashes-data';
+import hashesData from '../fixtures/hashes-data.json';
 import { loadFixture } from '../helper/load-fixture';
 import { readArrayBuffer } from '../../src/module';
 

@@ -1,5 +1,7 @@
 # audio-fingerprinting-file-reader
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/chrisguttandin/audio-fingerprinting-file-reader.svg)](https://greenkeeper.io/)
+
 **A reader for files created by audfprint.**
 
 [![tests](https://img.shields.io/travis/chrisguttandin/audio-fingerprinting-file-reader/master.svg?style=flat-square)](https://travis-ci.org/chrisguttandin/audio-fingerprinting-file-reader)

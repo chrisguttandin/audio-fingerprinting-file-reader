@@ -8,7 +8,7 @@
     "@types/text-encoding": "0.0.30",
     "babel-preset-es2015": "^6.24.1",
     "chai": "^4.0.2",
-    "eslint-config-holy-grail": "^18.0.0",
+    "eslint-config-holy-grail": "^18.1.0",
     "greenkeeper-lockfile": "^1.6.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.1.0",

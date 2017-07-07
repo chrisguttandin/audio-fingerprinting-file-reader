@@ -25,7 +25,7 @@
     "karma-mocha": "^1.1.0",
     "karma-sauce-launcher": "^1.0.0",
     "karma-sinon-chai": "^1.1.0",
-    "karma-webpack": "^2.0.3",
+    "karma-webpack": "^2.0.4",
     "load-grunt-config": "^0.19.1",
     "mocha": "^3.1.0",
     "rollup": "^0.43.0",

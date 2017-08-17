@@ -59,7 +59,7 @@
     "test": "grunt lint && grunt test"
   },
   "types": "build/es2015/module.d.ts",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "dependencies": {
     "babel-core": "^6.26.0"
   }

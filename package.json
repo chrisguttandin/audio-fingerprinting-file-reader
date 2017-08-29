@@ -35,6 +35,7 @@
     "sinon-chai": "^2.13.0",
     "ts-loader": "^2.3.4",
     "tsconfig-holy-grail": "^2.2.23",
+    "tslint": "^5.7.0",
     "tslint-config-holy-grail": "^10.0.2",
     "typescript": "^2.4.2",
     "webpack": "^3.5.5"
@@ -62,7 +63,6 @@
   "types": "build/es2015/module.d.ts",
   "version": "2.0.2",
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "tslint": "^5.7.0"
+    "babel-core": "^6.26.0"
   }
 }

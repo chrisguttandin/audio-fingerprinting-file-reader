@@ -78,7 +78,7 @@ module.exports = function (config) {
 
             browsers: [
                 'ChromeCanaryHeadless',
-                'FirefoxDeveloper'
+                'FirefoxDeveloperHeadless'
             ]
 
         });

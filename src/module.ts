@@ -20,5 +20,5 @@ export const readArrayBuffer = (arrayBuffer: ArrayBuffer): [ number, number ][] 
         return hashes;
     }
 
-    throw new Error('The given arrayBuffer seems to contain no content of a audfprint hash file.');
+    throw new Error('The given arrayBuffer seems to contain no content of an audfprint hash file.');
 };

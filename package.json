@@ -72,6 +72,7 @@
     "url": "https://github.com/chrisguttandin/audio-fingerprinting-file-reader.git"
   },
   "scripts": {
+    "commitmsg": "commitlint --edit --extends @commitlint/config-angular",
     "precommit": "grunt lint",
     "prepublishOnly": "grunt build",
     "test": "grunt lint && grunt test"

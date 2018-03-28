@@ -1,5 +1,4 @@
-// @todo Remove this declaration when it becomes available in the dom lib.
-const TEXT_ENCODER: TextEncoding.TextDecoder = new TextDecoder('utf-8');
+const TEXT_ENCODER: TextDecoder = new TextDecoder('utf-8');
 
 export const readArrayBuffer = (arrayBuffer: ArrayBuffer): [ number, number ][] => {
     const hashes: [ number, number ][] = [];

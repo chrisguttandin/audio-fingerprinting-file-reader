@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "babel-core": "^6.26.3",
     "tslib": "^1.9.3"
   },
   "description": "A reader for files created by audfprint.",
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-angular": "^7.0.1",
     "babel-plugin-external-helpers": "^6.22.0",

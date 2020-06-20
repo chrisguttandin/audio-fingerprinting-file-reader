@@ -1,7 +1,7 @@
 const TEXT_ENCODER: TextDecoder = new TextDecoder('utf-8');
 
-export const readArrayBuffer = (arrayBuffer: ArrayBuffer): [ number, number ][] => {
-    const hashes: [ number, number ][] = [];
+export const readArrayBuffer = (arrayBuffer: ArrayBuffer): [number, number][] => {
+    const hashes: [number, number][] = [];
 
     let dataView = new DataView(arrayBuffer, 0, 16);
 
@@ -11,7 +11,7 @@ export const readArrayBuffer = (arrayBuffer: ArrayBuffer): [ number, number ][] 
         dataView = new DataView(arrayBuffer);
 
         while (offset < arrayBuffer.byteLength) {
-            hashes.push([ dataView.getUint32(offset, true), dataView.getUint32(offset + 4, true) ]);
+            hashes.push([dataView.getUint32(offset, true), dataView.getUint32(offset + 4, true)]);
 
             offset += 8;
         }

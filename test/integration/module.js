@@ -3,11 +3,8 @@ import { loadFixtureAsArrayBuffer } from '../helper/load-fixture';
 import { readArrayBuffer } from '../../src/module';
 
 describe('audio-fingerprinting-file-reader', () => {
-
     describe('readArrayBuffer()', () => {
-
         leche.withData(hashesData, (filename, hashes) => {
-
             let arrayBuffer;
 
             beforeEach(async () => {
@@ -17,9 +14,6 @@ describe('audio-fingerprinting-file-reader', () => {
             it('should read the hashes from the file', () => {
                 expect(readArrayBuffer(arrayBuffer)).to.deep.equal(hashes);
             });
-
         });
-
     });
-
 });

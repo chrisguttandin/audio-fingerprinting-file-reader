@@ -9,7 +9,7 @@
         }
     },
     "dependencies": {
-        "@babel/runtime": "^7.11.0",
+        "@babel/runtime": "^7.11.2",
         "tslib": "^2.0.0"
     },
     "description": "A reader for files created by audfprint.",

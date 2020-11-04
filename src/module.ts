@@ -1,4 +1,4 @@
-const TEXT_ENCODER: TextDecoder = new TextDecoder('utf-8');
+const TEXT_ENCODER: TextDecoder = new TextDecoder();
 
 export const readArrayBuffer = (arrayBuffer: ArrayBuffer): [number, number][] => {
     const hashes: [number, number][] = [];

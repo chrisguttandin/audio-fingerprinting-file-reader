@@ -1,14 +1,27 @@
 const { env } = require('process');
+const { DefinePlugin } = require('webpack');
 
-module.exports = function (config) {
+module.exports = (config) => {
     config.set({
         basePath: '../../',
+
+        browserDisconnectTimeout: 100000,
+
+        browserNoActivityTimeout: 100000,
+
+        concurrency: 1,
 
         files: [
             {
                 included: false,
                 pattern: 'test/fixtures/**',
                 served: true,
+                watched: false
+            },
+            {
+                included: false,
+                pattern: 'src/**',
+                served: false,
                 watched: true
             },
             'test/integration/**/*.js'
@@ -32,6 +45,13 @@ module.exports = function (config) {
                     }
                 ]
             },
+            plugins: [
+                new DefinePlugin({
+                    'process.env': {
+                        CI: JSON.stringify(env.CI)
+                    }
+                })
+            ],
             resolve: {
                 extensions: ['.js', '.ts']
             }
@@ -42,30 +62,47 @@ module.exports = function (config) {
         }
     });
 
-    if (env.TRAVIS) {
+    if (env.CI) {
         config.set({
-            browsers: ['ChromeSauceLabs', 'FirefoxSauceLabs'],
+            browsers:
+                env.TARGET === 'chrome'
+                    ? ['ChromeSauceLabs']
+                    : env.TARGET === 'firefox'
+                    ? ['FirefoxSauceLabs']
+                    : env.TARGET === 'safari'
+                    ? ['SafariSauceLabs']
+                    : ['ChromeSauceLabs', 'FirefoxSauceLabs', 'SafariSauceLabs'],
 
-            captureTimeout: 120000,
+            captureTimeout: 300000,
 
             customLaunchers: {
                 ChromeSauceLabs: {
                     base: 'SauceLabs',
                     browserName: 'chrome',
-                    platform: 'OS X 10.11'
+                    captureTimeout: 300,
+                    platform: 'OS X 10.15'
                 },
                 FirefoxSauceLabs: {
                     base: 'SauceLabs',
                     browserName: 'firefox',
-                    platform: 'OS X 10.11'
+                    captureTimeout: 300,
+                    platform: 'OS X 10.15'
+                },
+                SafariSauceLabs: {
+                    base: 'SauceLabs',
+                    browserName: 'safari',
+                    captureTimeout: 300,
+                    platform: 'OS X 10.15'
                 }
             },
 
-            tunnelIdentifier: env.TRAVIS_JOB_NUMBER
+            sauceLabs: {
+                recordVideo: false
+            }
         });
     } else {
         config.set({
-            browsers: ['ChromeCanaryHeadless', 'FirefoxDeveloperHeadless']
+            browsers: ['ChromeCanaryHeadless', 'ChromeHeadless', 'FirefoxDeveloperHeadless', 'FirefoxHeadless', 'Safari']
         });
     }
 };

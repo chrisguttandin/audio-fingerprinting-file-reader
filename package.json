@@ -14,7 +14,7 @@
     },
     "description": "A reader for files created by audfprint.",
     "devDependencies": {
-        "@babel/core": "^7.25.7",
+        "@babel/core": "^7.25.8",
         "@babel/plugin-external-helpers": "^7.25.7",
         "@babel/plugin-transform-runtime": "^7.25.7",
         "@babel/preset-env": "^7.25.7",

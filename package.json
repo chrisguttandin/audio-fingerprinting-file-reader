@@ -75,5 +75,5 @@
         "test:integration": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"integration\" ]; then karma start config/karma/config-integration.js --single-run; fi"
     },
     "types": "build/es2019/module.d.ts",
-    "version": "4.0.81"
+    "version": "4.0.82"
 }

@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it } from 'vitest';
 import hashesData from '../fixtures/hashes-data.json';
 import { loadFixtureAsArrayBuffer } from '../helper/load-fixture';
 import { readArrayBuffer } from '../../src/module';
